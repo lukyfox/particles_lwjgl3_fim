@@ -1,4 +1,4 @@
-package task2;
+package task2_bubbles;
 
 import lwjglutils.*;
 import main.AbstractRenderer;
@@ -56,7 +56,7 @@ public class Renderer extends AbstractRenderer {
         OGLUtils.printJAVAparameters();
         OGLUtils.shaderCheck();
 
-        this.particleMan = new ParticleManager();
+        this.particleMan = new ParticleManager(1000, false);
 
         // Set the clear color
         glClearColor(0.9f, 0.9f, 0.9f, 0.0f);

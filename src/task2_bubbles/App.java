@@ -1,4 +1,4 @@
-package task2;
+package task2_bubbles;
 
 import main.LwjglWindow;
 
