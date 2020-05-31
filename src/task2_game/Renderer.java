@@ -347,7 +347,7 @@ public class Renderer extends AbstractRenderer {
                             blackHoleParticle.setPosition(new Vec3D(blackHolePos.getX(), blackHolePos.getY(), blackHolePos.getZ() + step));
                         }
                         break;
-                        
+
                         case GLFW_KEY_KP_5:
                         // press 5 o numerical keyboard to activate attraction
                             if(attactionActive) {

@@ -1,16 +1,14 @@
 #version 150
 
 in vec2 fragCoord;
-in float fragTexType;
 in float fragLocViewType;
-
-uniform float type;
-uniform float locViewType;
-
 in vec3 fragParticleColor;
 in float fragMousePosX;
 in float fragAlpha;
 in float fragTime;
+
+uniform float type;
+uniform float locViewType;
 
 out vec4 outColor; // (vždy jediný) výstup z fragment shaderu
 
@@ -34,21 +32,4 @@ void main() {
 		outColor = vec4(fragParticleColor, 1.0);
 	}
 
-	/*
-	if(texType == 0.0) {
-		// texType is transported from vertex shader
-		outColor = vec4(fragCoord, 0f, 1.0);
-		if(type == 13.0) {
-			outColor.z = outColor.y * fragMousePosX;
-		}
-	}
-	else {
-		if(type != 13.0) {
-			outColor = simpleColor;//vec4(coord, 0f, 1.0);
-		}
-		else {
-			// set colorful particles, each particle hold it's color, color may change during lifetime
-			outColor = vec4(fragParticleColor, fragAlpha);
-		}
-	}*/
 }
