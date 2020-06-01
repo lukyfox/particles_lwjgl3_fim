@@ -201,36 +201,23 @@ public class Renderer extends AbstractRenderer {
             glUniform1f(locAlpha, (float)particle.getTtl() / (float)particle.getDuration());
             buffers.draw(GL_TRIANGLES, shaderProgramViewer);
 
-
-            // swarm dance :)
-            //glUniform1f(locMoveType, (float)typeView);
-            //buffers.draw(GL_TRIANGLES, shaderProgramViewer);
-
-
         });
         // update or deactivate particles
         particleMan.updateParticleList();
 
-
         // create and draw text
         String sceneDescription;
-        String text = "window size = " + width + 'x' + height;
-        text += ". Click right mouse button to switch modes. Use WSAD, arrow up/down to move and Home to reset position.";
+        String text = "Black hole game (v0.1)";
+        text += ". Use WSAD, arrow up/down to move and Home to reset position. Use numerical keyboard to move Black hole:";
         textRenderer.clear();
         textRenderer.addStr2D(10, 20, text);
         textRenderer.setColor(Color.DARK_GRAY);
-        if(typeView == 0) {sceneDescription = "Plane and Particles - coordinates to color, move mouse horizontally to change color";}
-        else if(typeView == 1) {sceneDescription = "Plane and colorful Particles";}
-        else {sceneDescription = "UNSUPPORTED MODE! (Forgotten TODO?)";}
 
-        //Vec3D blackHolePos = blackHoleParticle.getPosition();
-        String temp = " Black hole position: (" + blackHolePos.getX() + ", " + blackHolePos.getY() + ", " + blackHolePos.getZ() + "), distance: " + distance;
-        text = "Display mode = " + typeView + " / " + TypeViewMax + ": " + sceneDescription + temp;
+        text = "-> keys 8, 2, 4 or 6 to move horizontally (x-y axis), 9 or 3 to move vertically (z axis). Press 5 to activate or deactivate attraction.";
         textRenderer.addStr2D(10, 40, text);
 
-        text = "Consumed particles = " + consumedParticles + ", " + param.get();
+        text = "Black hole has consumed " + consumedParticles + " particles. Next version implements 'enemy' for more fun";
         textRenderer.addStr2D(10, 60, text);
-
 
         textRenderer.draw();
     }
